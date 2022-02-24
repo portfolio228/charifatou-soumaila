@@ -1,6 +1,7 @@
 import { DataApiService } from './../../services/http/data-api.service';
 import { Component, OnInit, HostListener } from '@angular/core';
 import {DownloadData} from '../../interfaces/resume.interface';
+import {CvData} from '../../interfaces/cv.interface';
 
 @Component({
   selector: 'app-home',
@@ -61,7 +62,7 @@ export class HomeComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   onClickDownloadPdf(){
-    const base64String = DownloadData.CV;
+    const base64String = CvData.CV;
     this.downloadPdf(base64String, `${this.profile.name} _CV`.replace(/\s/g, ''));
   }
 
